@@ -8,20 +8,110 @@
   /* Normal Keys */
   --num-key-color: #444b5a;
   --num-key-bg: #e6e6e6;
+  --num-key-clicked-bg: #d3d4d6;
   --num-key-shadow: #b4a597;
 
   /* Del And Reset Keys */
   --reset-del-color: #ffffff;
   --reset-del-bg: #637097;
+  --reset-del-clicked-bg: #404e72;
   --reset-del-shadow: #404e72;
 
   /* Equal & Toggle Keys */
   --equal-toggle-color: #ffffff;
   --equal-toggle-bg: #d03f2f;
+  --equal-clicked-bg: #93261a;
   --equal-toggle-shadow: #93261a;
   /* Toggle Key */
   --toggle-keypad-bg: #232c43;
   --toggle-color: #d03f2f;
+}
+/* Dark theme */
+body.dark {
+  /* Backgrounds */
+  --main-bg-color: #3a4764;
+  --sec-bg-color: #182034;
+  --text-color: #ffffff;
+  --screen-bg: #182034;
+
+  /* Normal Keys */
+  --num-key-color: #444b5a;
+  --num-key-bg: #e6e6e6;
+  --num-key-clicked-bg: #d3d4d6;
+  --num-key-shadow: #b4a597;
+
+  /* Del And Reset Keys */
+  --reset-del-color: #ffffff;
+  --reset-del-bg: #637097;
+  --reset-del-clicked-bg: #404e72;
+  --reset-del-shadow: #404e72;
+
+  /* Equal & Toggle Keys */
+  --equal-toggle-color: #ffffff;
+  --equal-toggle-bg: #d03f2f;
+  --equal-clicked-bg: #93261a;
+  --equal-toggle-shadow: #93261a;
+  /* Toggle Key */
+  --toggle-keypad-bg: #232c43;
+  --toggle-color: #d03f2f;
+}
+/* Light Theme */
+body.light {
+  /* Backgrounds */
+  --main-bg-color: #e6e6e6;
+  --sec-bg-color: #ededed;
+  --text-color: #35352c;
+  --screen-bg: #ededed;
+
+  /* Normal Keys */
+  --num-key-color: #444b5a;
+  --num-key-bg: #e6e6e6;
+  --num-key-clicked-bg: #d3d4d6;
+  --num-key-shadow: #a69d91;
+
+  /* Del And Reset Keys */
+  --reset-del-color: #ffffff;
+  --reset-del-bg: #377f86;
+  --reset-del-clicked-bg: #404e72;
+  --reset-del-shadow: #1b5f65;
+
+  /* Equal & Toggle Keys */
+  --equal-toggle-color: #ffffff;
+  --equal-toggle-bg: #ca5502;
+  --equal-clicked-bg: #93261a;
+  --equal-toggle-shadow: #893901;
+
+  /* Toggle Key */
+  --toggle-keypad-bg: #d1cccc;
+  --toggle-color: #ca5502;
+}
+body.eco {
+  --main-bg-color: #160628;
+  --sec-bg-color: #1d0934;
+  --text-color: #ffe53d;
+  --screen-bg: #1d0934;
+
+  /* Normal Keys */
+  --num-key-color: #ffe53d;
+  --num-key-bg: #341c4f;
+  --num-key-clicked-bg: #6c3ea0;
+  --num-key-shadow: #871c9c;
+
+  /* Del And Reset Keys */
+  --reset-del-color: #ffffff;
+  --reset-del-bg: #58077d;
+  --reset-del-clicked-bg: #404e72;
+  --reset-del-shadow: #bc15f4;
+
+  /* Equal & Toggle Keys */
+  --equal-toggle-color: #1b2428;
+  --equal-toggle-bg: #00e0d1;
+  --equal-clicked-bg: #0eeedf;
+  --equal-toggle-shadow: #6cf9f2;
+
+  /* Toggle Key */
+  --toggle-keypad-bg: #1d0934;
+  --toggle-color: #00e0d1;
 }
 *,
 *::before,
@@ -40,8 +130,11 @@ a {
 body {
   height: 100vh;
   min-height: 100vh;
-  background: var(--main-bg-color);
+  background-color: var(--main-bg-color);
   color: var(--text-color);
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 .container {
   height: 100vh;
@@ -49,37 +142,46 @@ body {
   padding: 30px 20px;
   margin: auto;
 }
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+/* Logo */
 header .logo {
   font-size: 2rem;
 }
+/* Theme Toggle */
 header .theme-toggle {
   display: flex;
   justify-content: center;
   align-items: end;
-  gap: 25px;
+  gap: 30px;
 }
+/* Theme Toggle Label */
 header h4 {
+  margin-bottom: 5px;
   font-size: 0.8rem;
   text-transform: uppercase;
 }
+/* Theme Toggle Status */
 .status {
   display: flex;
   justify-content: space-around;
   font-size: 0.7rem;
 }
-
+/* Theme Toggle Switch */
 .toggle-switch {
+  border-radius: 34px;
+  background-color: var(--toggle-keypad-bg);
   position: relative;
   width: 70px;
   height: 25px;
   cursor: pointer;
   margin: 4px 0;
 }
+/* Theme Toggle Slider */
 .slider {
   position: absolute;
   top: 0;
@@ -91,7 +193,8 @@ header h4 {
   transition: background-color 0.4s ease;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.thumb {
+/* Theme Toggle Circle */
+.circle {
   position: absolute;
   height: 19px;
   width: 19px;
@@ -102,46 +205,92 @@ header h4 {
   transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
-.toggle-switch#state-1 .thumb {
-  transform: translateX(0px);
-}
-/* .toggle-switch.state-1 .slider {
-  background-color: #ccc;
-} */
+/* the show input */
 
-.toggle-switch#state-2 .thumb {
-  transform: translateX(22px);
-}
-/* .toggle-switch.state-2 .slider {
-  background-color: #ffa500;
-} */
-.toggle-switch#state-3 .thumb {
-  transform: translateX(80px);
-}
-/* .toggle-switch.state-3 .slider {
-  background-color: #6c63ff;
-} */
-
-header .number-wrapper {
-  height: 300px;
-  width: 250px;
-  background: var(--sec-bg-color);
-}
-.number-wrapper #showNum {
+.show-num {
+  background-color: var(--screen-bg);
+  margin: 40px 0 20px 0;
+  border: none;
+  border-radius: 10px;
   width: 100%;
-  height: 5vh;
-  margin-bottom: 20px;
+  height: 12vh;
+  font-size: 2.5rem;
+  color: var(--text-color);
+  text-align: right;
+  padding: 20px;
 }
-.number-wrapper .keys {
-  display: grid;
-  grid-template-columns: repeat(4, 2fr);
-  grid-template-rows: repeat(5, 2fr);
-  gap: 2px;
+.show-num:focus {
+  outline: none;
+}
+.show-num::placeholder {
+  color: var(--text-color);
+  opacity: 0.5;
 }
 
-.keys {
-  font-size: 32px;
-  color: var(--num-key-color);
-  background-color: var(--num-key-bg);
-  box-shadow: 0 0 0 var(--num-key-shadow);
+/* Keys Wrapper */
+.keys-wrapper {
+  height: 65vh;
+  background-color: var(--toggle-keypad-bg);
+  padding: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 13px;
 }
+/* All Buttons */
+.keys-wrapper .key {
+  padding: 10px 5px;
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: var(--num-key-color);
+  border: none;
+  border-radius: 5px;
+  background-color: var(--num-key-bg);
+  color: var(--num-key-color);
+  box-shadow: 0px 4px var(--num-key-shadow);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+/* Button Click Effects */
+.keys-wrapper .key:active {
+  background-color: var(--num-key-clicked-bg);
+  transform: translateY(4px);
+  box-shadow: 0px 0px var(--num-key-shadow);
+}
+/* Special Keys */
+#reset,
+#delete,
+#equal {
+  font-size: 1.2rem;
+}
+#reset,
+#delete {
+  color: var(--reset-del-color);
+  background-color: var(--reset-del-bg);
+  box-shadow: 0px 4px var(--reset-del-shadow);
+}
+/* reset & equal clicked effects */
+#reset:active,
+#delete:active {
+  background-color: var(--reset-del-clicked-bg);
+}
+#equal {
+  color: var(--equal-toggle-color);
+  background-color: var(--equal-toggle-bg);
+  box-shadow: 0px 4px var(--equal-toggle-shadow);
+}
+/* Equal Key Clicked Effects */
+#equal:active {
+  background-color: var(--equal-clicked-bg);
+}
+
+#reset,
+#equal {
+  grid-column: span 2;
+}
+/* media quiry */

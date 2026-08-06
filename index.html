@@ -25,50 +25,47 @@
     <!-- Calculator App Container -->
     <div class="container">
       <header>
-        <div class="logo">calc</div>
+        <span class="logo">calc</span>
         <div class="theme-toggle">
           <h4>theme</h4>
           <div class="toggle-wrapper">
             <div class="status">
-              <span>1</span>
-              <span>2</span>
-              <span>3</span>
+              <span data-theme="light">1</span>
+              <span data-theme="dark">2</span>
+              <span data-theme="eco">3</span>
             </div>
             <div class="toggle-switch" id="toggleSwitch">
-              <div class="slider">
-                <div class="thumb" id="thumb"></div>
-              </div>
+              <!-- <div class="slider"> -->
+              <span class="circle" id="circle"></span>
             </div>
           </div>
         </div>
       </header>
-      <!-- <div class="keys-wrapper">
-        <input type="text" id="showNum" />
-        <div class="keys">
-          <button class="keys">7</button>
-          <button class="keys">8</button>
-          <button class="keys">9</button>
-          <button class="sec-keys" id="delete">Del</button>
+      <input type="text" class="show-num" id="showNum" placeholder="0" />
+      <div class="keys-wrapper">
+        <button class="key">7</button>
+        <button class="key">8</button>
+        <button class="key">9</button>
+        <button class="del-key key" id="delete">Del</button>
 
-          <button class="keys">4</button>
-          <button class="keys">5</button>
-          <button class="keys">6</button>
-          <button id="plus">+</button>
+        <button class="key">4</button>
+        <button class="key">5</button>
+        <button class="key">6</button>
+        <button class="key" id="plus">+</button>
 
-          <button class="keys">1</button>
-          <button class="keys">2</button>
-          <button class="keys">3</button>
-          <button id="minus">-</button>
+        <button class="key">1</button>
+        <button class="key">2</button>
+        <button class="key">3</button>
+        <button class="key" id="minus">-</button>
 
-          <button class="keys">.</button>
-          <button class="keys">0</button>
-          <button id="division" class="keys">/</button>
-          <button id="multipl" class="keys">X</button>
+        <button class="key">.</button>
+        <button class="key">0</button>
+        <button id="divide" class="key">/</button>
+        <button id="multiply" class="key">×</button>
 
-          <button class="sec-keys" id="reset">Reset</button>
-          <button class="ther-key" id="equal">=</button>
-        </div>
-      </div> -->
+        <button class="reset-key key" id="reset">Reset</button>
+        <button class="equal-key key" id="equal">=</button>
+      </div>
     </div>
 
     <!-- <footer class="attribution">
