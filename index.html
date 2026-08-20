@@ -12,6 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <!-- Icon Logo -->
     <link
       rel="icon"
       type="image/png"
@@ -26,6 +27,7 @@
     <div class="container">
       <header>
         <span class="logo">calc</span>
+        <button class="info-btn" id="infoBtn">&lt;/&gt;</button>
         <div class="theme-toggle">
           <h4>theme</h4>
           <div class="toggle-wrapper">
@@ -35,44 +37,56 @@
               <span data-theme="eco">3</span>
             </div>
             <div class="toggle-switch" id="toggleSwitch">
-              <!-- <div class="slider"> -->
               <span class="circle" id="circle"></span>
             </div>
           </div>
         </div>
       </header>
-      <input type="text" class="show-num" id="showNum" placeholder="0" />
+      <input type="text" class="screen" id="screen" placeholder="0" />
       <div class="keys-wrapper">
-        <button class="key">7</button>
-        <button class="key">8</button>
-        <button class="key">9</button>
-        <button class="del-key key" id="delete">Del</button>
+        <button class="key" data-type="number">7</button>
+        <button class="key" data-type="number">8</button>
+        <button class="key" data-type="number">9</button>
+        <button class="del-key key" id="delete" data-type="delete">Del</button>
 
-        <button class="key">4</button>
-        <button class="key">5</button>
-        <button class="key">6</button>
-        <button class="key" id="plus">+</button>
+        <button class="key" data-type="number">4</button>
+        <button class="key" data-type="number">5</button>
+        <button class="key" data-type="number">6</button>
+        <button class="key" id="plus" data-type="operator">+</button>
 
-        <button class="key">1</button>
-        <button class="key">2</button>
-        <button class="key">3</button>
-        <button class="key" id="minus">-</button>
+        <button class="key" data-type="number">1</button>
+        <button class="key" data-type="number">2</button>
+        <button class="key" data-type="number">3</button>
+        <button class="key" id="minus" data-type="operator">-</button>
 
-        <button class="key">.</button>
-        <button class="key">0</button>
-        <button id="divide" class="key">/</button>
-        <button id="multiply" class="key">×</button>
+        <button class="key" id="dot">.</button>
+        <button class="key" data-type="number">0</button>
+        <button class="key" id="divide" data-type="operator">/</button>
+        <button class="key" id="multiply" data-type="operator">×</button>
 
-        <button class="reset-key key" id="reset">Reset</button>
-        <button class="equal-key key" id="equal">=</button>
+        <button class="reset-key key" id="reset" data-type="reset">
+          Reset
+        </button>
+        <button class="equal-key key" id="equal" data-type="operator">=</button>
       </div>
     </div>
 
-    <!-- <footer class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
-    </footer> -->
+    <!-- Information Window -->
+    <div class="info-window" id="infoWindow">
+      <!-- Close Window Button -->
+      <button class="close-btn" id="closeBtn">X</button>
+
+      <span>
+        Challenge by :
+        <a href="https://www.frontendmentor.io?ref=challenge"
+          >Frontend Mentor</a
+        >
+      </span>
+      <span>
+        Coded by :
+        <a href="#">Fadi Yajoury</a>
+      </span>
+    </div>
     <!-- JS File -->
     <script src="./assets/JS/main-app.js"></script>
   </body>
