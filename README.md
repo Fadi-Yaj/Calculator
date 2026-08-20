@@ -48,21 +48,21 @@ It aims to provide an easy-to-use interface for performing basic arithmetic oper
 
 ## 🖱️ How to use
 
-. Press the numbers (0-9) to form the number
-. Choose the arithmetic operation (+, -, ×, ÷)
-. Press the (=) button to get the result
-. Use the (Reset) button to clear everything, or (Del) to clear only the last number
+- Press the numbers (`0`-`9`) to form the number
+- Choose the arithmetic operation (`+`, `-`, `×`, `÷`)
+- Press the (`=`) button to get the result
+- Use the (`Reset`) button to clear everything, or (`Del`) to clear only the last number
 
 ## 🚀 Future developments (ideas for additions)
 
-. Adding advanced operations such as exponentiation (^) and square root (√)
-. Save a record of previous operations
-. Keyboard support capability.
-. Adding some improvements to the product display and programmer
+- Adding advanced operations such as exponentiation (`^`) and square root (`√`) and adding the percentage (`%`)
+- Save a record of previous operations
+- Keyboard support capability.
+- Adding some improvements to the product display and programmer
 
 ## 📄 License
 
-. This project is open source and can be used for any educational or personal purpose.
+- This project is open source and can be used for any educational or personal purpose.
 
 ## Designer and Programmer
 
